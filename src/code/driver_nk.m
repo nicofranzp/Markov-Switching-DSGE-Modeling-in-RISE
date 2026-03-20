@@ -1,4 +1,21 @@
-clear all; close all; clc;
+%% Preamble 
+	close all
+	clear
+	clc
+%% Loads matlab project with all the relative paths
+	input.root_name= 'Markov-Switching-DSGE-Modeling-in-RISE';
+	local_path= fileparts(mfilename('fullpath'));
+	root= extractBefore(local_path,strfind(local_path, input.root_name)+length(input.root_name));
+	cd(fullfile(local_path,'functions', 'utils'));
+	loadProject(root, input.root_name);
+	Path= setPaths(currentProject);
+%% Check for RISE startup
+	try 
+		rise;
+	catch
+		run('rise_startup.m');
+	end
+%% Run the code
 m = rise('nk.rs');
 % Parameterization
 p = struct('beta',1/(1+0.706/400),'sigma',2.9,'varphi',2.5,'theta',0.82,'gamma',0.77,...

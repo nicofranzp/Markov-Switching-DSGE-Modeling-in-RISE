@@ -1,14 +1,15 @@
-# Replication and Code Documentation  
+# Replication and Code Documentation
+
 **Markov-Switching DSGE Modeling in RISE**
 
-Junior Maih, Nigar Hashimzade, Oleg Kirsanov, and Tatiana Kirsanova  
+Junior Maih, Nigar Hashimzade, Oleg Kirsanov, and Tatiana Kirsanova
 
 January 21, 2026
 
 ## Purpose of the Repository
 
-This repository accompanies the chapter  
-**“Markov-Switching DSGE Modeling in RISE”**  
+This repository accompanies the chapter
+**“Markov-Switching DSGE Modeling in RISE”**
 Prepared for the *Edward Elgar Handbook of Research Methods and Applications in Empirical Macroeconomics, 2nd ed.*
 
 The chapter demonstrates how the RISE toolbox can be used to specify, solve, estimate, and analyze DSGE models with regime switching.

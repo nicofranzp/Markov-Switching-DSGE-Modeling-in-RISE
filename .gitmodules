@@ -1,0 +1,3 @@
+[submodule "vendor/RISE_toolbox"]
+	path = vendor/RISE_toolbox
+	url = https://github.com/jmaih/RISE_toolbox

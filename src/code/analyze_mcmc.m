@@ -1,4 +1,22 @@
-clear all; load('MCMC_NKUS5725_20_Jan_2026_19_33_58');
+%% Preamble 
+	close all
+	clear
+	clc
+%% Loads matlab project with all the relative paths
+	input.root_name= 'Markov-Switching-DSGE-Modeling-in-RISE';
+	local_path= fileparts(mfilename('fullpath'));
+	root= extractBefore(local_path,strfind(local_path, input.root_name)+length(input.root_name));
+	cd(fullfile(local_path,'functions', 'utils'));
+	loadProject(root, input.root_name);
+	Path= setPaths(currentProject);
+%% Check for RISE startup
+	try 
+		rise;
+	catch
+		run('rise_startup.m');
+	end
+%% Run the code
+load('MCMC_NKUS5725_20_Jan_2026_19_33_58');
 % --- Settings ---
 Nd = 100; % number of posterior draws to use
 chain_id = 1; % which chain in 'results' to use
