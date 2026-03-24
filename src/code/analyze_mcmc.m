@@ -16,7 +16,7 @@
 		run('rise_startup.m');
 	end
 %% Run the code
-load('MCMC_NKUS5725_20_Jan_2026_19_33_58');
+load('MCMC_NKUS5725_20_Mar_2026_17_51_14');
 % --- Settings ---
 Nd = 100; % number of posterior draws to use
 chain_id = 1; % which chain in 'results' to use

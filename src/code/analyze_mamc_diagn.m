@@ -16,10 +16,15 @@
 		run('rise_startup.m');
 	end
 %% Run the code
-load('MCMC_NKUS5725_20_Jan_2026_19_33_58');
+
+
+% Load latest MCMC file
+mcmcFile = getEstimationFilename(Path.examples, 'MCMC_NKUS5725', 'latest');
+load(mcmcFile);
+
 priornames = fieldnames(me.estimation.priors);
-ndraw = 100000;
-res = mcmc(results,priornames,{1:5:ndraw,1:2});
+ndraw = 1000;
+res = mcmc(results, priornames, {1:5:ndraw,1:2});
 [summary_tables, MyQuantiles] = summary(res);
 figure('Name','Diagnostics')
 subplot(2,4,1); autocorrplot(res,'theta');subplot(2,4,2); densplot(res,'theta');

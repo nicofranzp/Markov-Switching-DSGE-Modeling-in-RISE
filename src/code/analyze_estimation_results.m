@@ -16,7 +16,8 @@
 		run('rise_startup.m');
 	end
 %% Run the code
-load('Estimation_NKUS5425_20_Jan_2026_15_29_36');
+estimationFile = getEstimationFilename(Path.examples, 'Estimation_NKUS5425', 'latest');
+load(estimationFile);
 plot_probabilities(me); print_estimation_results(me);
 [myfilt_e, LogLik_e] = filter(me); % The model is parameterized by estimated parameters
 
