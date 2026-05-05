@@ -16,7 +16,7 @@
 		run('rise_startup.m');
 	end
 %% Run the code
-load('MCMC_NKUS5725_20_Jan_2026_19_33_58.mat');
+load(getEstimationFilename(Path.examples, 'MCMC_NKUS5725', 'latest'));
 % Dimensions and variable names
 T = me.options.data.NumberOfObservations; chain_id = 1; K = 100;rng(123);
 exo_names = get(me,'exo_list'); endo_names = get(me,'endo_list');

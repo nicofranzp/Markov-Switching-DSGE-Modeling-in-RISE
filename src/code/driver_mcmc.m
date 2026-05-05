@@ -19,18 +19,13 @@
 load(getEstimationFilename(Path.examples, 'Estimation_NKUS5425', 'latest'));
 
 [objective,lb,ub,mu,SIG]=pull_objective(me, 'solve_check_stability', false, 'fix_point_TolFun', 1e-6);
-scale= 0.15;
-myOpts= struct();
-SIG_init = scale*SIG;
-myOpts.nchain= 2;
-myOpts.N= 1000;
+scale=0.15;
+myOpts=struct();
+myOpts.tunedCov=scale*SIG;
+myOpts.nchain=2;
+myOpts.N=100;
 energy=@(varargin)-objective(varargin{:});
-clear results
-results= mh_sampler(energy, lb, ub, myOpts, mu, SIG_init);
-disp(['Type of results after mh_sampler: ', class(results)]);
-
-mddobj = mdd(results, energy, lb, ub, true); 
-mdd_bridge = bridge(mddobj, true);
-
-rndNameMCMC = fullfile(Path.examples, ['MCMC_NKUS5725_', replace(char(datetime("now")), {'-',':',' '}, {'_','_','_'})]);
-save(rndNameMCMC, 'pmode', 'priors', 'me', 'filtration', 'm', 'db', 'results', 'objective', 'lb', 'ub', 'mdd_bridge');
+results=sample(rsamplers.rwmh(energy,mu,lb,ub,myOpts));
+mddobj=mdd(results,energy,lb,ub,[],[],true); mdd_bridge = bridge(mddobj,true);
+rndName1=fullfile(Path.examples,['MCMC_NKUS5725_',replace(char(datetime("now")),{'-',':',' '},{'_','_','_'})]);
+save(rndName1, 'pmode', 'priors', 'me', 'filtration', 'm', 'db', 'results', 'objective', 'lb', 'ub', 'mdd_bridge');

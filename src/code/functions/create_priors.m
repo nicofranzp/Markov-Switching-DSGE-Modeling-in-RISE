@@ -12,13 +12,13 @@ priors.rho_mu = {0.17067, 0.50, 0.15, 'beta', 0.01, 0.999};
 priors.rho_z = {0.6328, 0.50, 0.15, 'beta', 0.01, 0.999};
 priors.rho_r = {0.836, 0.50, 0.15, 'beta', 0.01, 0.999};
 % --- Shock volatilities (switching) ---
-priors.sig_xi_vol_1 = {0.97639, 0.50, 0.50, 'inv_gamma', 1e-4, 10};
-priors.sig_xi_vol_2 = {4.7282, 2.00, 0.50, 'inv_gamma', 1e-4, 10};
-priors.sig_mu_vol_1 = {0.0858, 0.25, 0.50, 'inv_gamma', 1e-4, 10};
-priors.sig_mu_vol_2 = {0.76634, 1.00, 0.50, 'inv_gamma', 1e-4, 10};
-priors.sig_z_vol_1 = {0.33166, 0.50, 0.50, 'inv_gamma', 1e-4, 10};
-priors.sig_z_vol_2 = {1.0837, 1.50, 0.50, 'inv_gamma', 1e-4, 10};
-priors.sig_r = {0.18226, 0.25, 0.05, 'inv_gamma', 1e-4, 10};
+priors.sig_xi_vol_1 = {0.97639, 0.50, 0.50, 'igamma1', 1e-4, 10};
+priors.sig_xi_vol_2 = {4.7282, 2.00, 0.50, 'igamma1', 1e-4, 10};
+priors.sig_mu_vol_1 = {0.0858, 0.25, 0.50, 'igamma1', 1e-4, 10};
+priors.sig_mu_vol_2 = {0.76634, 1.00, 0.50, 'igamma1', 1e-4, 10};
+priors.sig_z_vol_1 = {0.33166, 0.50, 0.50, 'igamma1', 1e-4, 10};
+priors.sig_z_vol_2 = {1.0837, 1.50, 0.50, 'igamma1', 1e-4, 10};
+priors.sig_r = {0.18226, 0.25, 0.05, 'igamma1', 1e-4, 10};
 % --- Policy rule coefficients (switching) ---
 priors.phi1_policy_1 = {1.8601, 2.00, 0.15, 'normal', 0.001, 10};
 priors.phi1_policy_2 = {0.34163, 0.50, 0.50, 'normal', 0.001, 10};

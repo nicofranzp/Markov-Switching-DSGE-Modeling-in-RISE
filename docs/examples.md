@@ -17,4 +17,4 @@ rep.table('data', results);
 rep.save('output/report.pdf');
 ```
 
-See the RISE toolbox examples folder for more.
+See the vendored RISE toolbox examples folder at `vendor/RISE_toolbox/examples` for more.

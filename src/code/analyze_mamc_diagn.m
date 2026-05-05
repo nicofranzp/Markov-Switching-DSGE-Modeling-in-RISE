@@ -23,8 +23,8 @@ mcmcFile = getEstimationFilename(Path.examples, 'MCMC_NKUS5725', 'latest');
 load(mcmcFile);
 
 priornames = fieldnames(me.estimation.priors);
-ndraw = 1000;
-res = mcmc(results, priornames, {1:5:ndraw,1:2});
+ndraw = 100;
+res = mcmc(results, priornames, {1:1:ndraw,1:2});
 [summary_tables, MyQuantiles] = summary(res);
 figure('Name','Diagnostics')
 subplot(2,4,1); autocorrplot(res,'theta');subplot(2,4,2); densplot(res,'theta');

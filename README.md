@@ -21,7 +21,7 @@ The files provided here correspond directly to the model specifications, estimat
 Replication requires the following software:
 
 - MATLAB (R2021a or later recommended)
-- RISE toolbox for MATLAB (Maih, 2015 and subsequent versions)
+- RISE toolbox for MATLAB, vendored in this repository at `vendor/RISE_toolbox` (current checkout: `v2019-2-g6be00c90`)
 - MATLAB Optimization and Statistics toolboxes
 
 ## Repository Structure
@@ -36,22 +36,15 @@ The `code/` directory contains the main MATLAB scripts used for estimation, simu
 - [x] `driver_nk_ms.m`: Solution driver for the Markov-switching version of the New Keynesian model.
 - [x] `driver_nk_ms_obs.m`: Solution/simulation driver for the model with observation equations.
 - [x] `create_priors.m`: Prior specification *function*.
-  - FIXME: here the toolbox does not recognize the distribution `igamma1`
-  - DONE: replaced with `inv_gamma`
 - [x] `driver_nk_ms_est.m`: Estimation driver for the Markov-switching model.
 - [x] `driver_mcmc.m`: MCMC driver for posterior simulation using Markov Chain Monte Carlo methods.
-  - FIXME: the functions signature was not the same as the RISE version.
-  - DONE: Use the signature that made sense
 - [x] `nk_nonlinear_ssfile.m`: *function* with the steady-state of the nonlinear model.
 - [x] `driver_nk_nonlinear.m`: Solution driver for a nonlinear model.
-  - FIXME: a bunch of non-supported options
 - [x] `analyze_estimation_results.m`: Processing of estimation results: Summary statistics and figures.
-  - FIXME: some functions do not exist
-  - DONE: functions were copied from the examples in the RISE dist
-- [ ] `analyze_mcmc_diagn.m`: MCMC convergence diagnostics.
-- [ ] `analyze_mcmc.m`: Post-processing of MCMC output.
-- [ ] `replicate_history.m`: Historical decomposition and replication exercises.
-- [ ] `counterfactual.m`: Counterfactual policy experiments.
+- [x] `analyze_mcmc_diagn.m`: MCMC convergence diagnostics.
+- [x] `analyze_mcmc.m`: Post-processing of MCMC output.
+- [x] `replicate_history.m`: Historical decomposition and replication exercises.
+- [x] `counterfactual.m`: Counterfactual policy experiments.
 
 ### Model Files
 

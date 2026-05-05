@@ -18,7 +18,8 @@
 %% Run the code
 estimationFile = getEstimationFilename(Path.examples, 'Estimation_NKUS5425', 'latest');
 load(estimationFile);
-plot_probabilities(me); print_estimation_results(me);
+% plot_probabilities(me);
+print_estimation_results(me);
 [myfilt_e, LogLik_e] = filter(me); % The model is parameterized by estimated parameters
 
 %%

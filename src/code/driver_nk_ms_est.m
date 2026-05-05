@@ -16,7 +16,7 @@
 		run('rise_startup.m');
 	end
 %% Run the code
-m = rise('nk_ms_est.rs');
+m = rise('nk_ms_est.dsge');
 p = struct('beta', 1/(1+0.706/400), 'sigma', 2.9, 'varphi', 2.5, 'theta', 0.82, 'gamma', 0.77, 'zeta', 0.10, 'rho_z', 0.90, 'rho_mu', 0.70, 'rho_xi', 0.80, 'rho_r', 0.79, 'sig_r', 0.10, 'policy_tp_1_2', 0.05, 'policy_tp_2_1', 0.05, 'vol_tp_1_2', 0.05, 'vol_tp_2_1', 0.05, 'phi1_policy_1', 1.72, 'phi1_policy_2', 1.20, 'phi2_policy_1', 0.49, 'phi2_policy_2', 0.20, 'sig_z_vol_1', 0.50, 'sig_z_vol_2', 1.00, 'sig_mu_vol_1', 0.15, 'sig_mu_vol_2', 0.30, 'sig_xi_vol_1', 0.10, 'sig_xi_vol_2', 0.20);
 m = set(m, 'parameters', p);
 m = solve(m);

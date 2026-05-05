@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Download or clone the RISE toolbox from GitHub.
+1. Use the bundled RISE toolbox under `vendor/RISE_toolbox`.
 2. Add the toolbox path to MATLAB.
 3. Run `rise_startup()` in MATLAB.
 
